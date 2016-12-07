@@ -9,11 +9,18 @@
     $scope.resultString = "";
     
     $scope.checkLunch = function() {
-      var splitStrings = $scope.dishes.split(",");
-      if(splitStrings.length > 3)
-        $scope.resultString = "Too much!";
+      if(!$scope.dishes)
+      {
+        $scope.resultString = "Please enter data first";
+      }
       else
-        $scope.resultString =  "Enjoy!";
+      {
+        var splitStrings = $scope.dishes.split(",");
+        if(splitStrings.length > 3)
+          $scope.resultString = "Too much!";
+        else
+          $scope.resultString =  "Enjoy!";
+      }
     };
     
   }
